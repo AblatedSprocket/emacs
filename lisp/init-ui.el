@@ -1,3 +1,8 @@
+;;; init-ui.el --- INitializes UI configuration for Emacs
+;;; Commentary:
+;;; Not a lot to say just yet.
+
+;;; Code:
 (require 'init-elpa)
 (require-package 'atom-one-dark-theme)
 (require-package 'golden-ratio)
@@ -28,6 +33,7 @@
 (set-cursor-color "#cccccc")
 (setq ring-bell-function 'ignore)
 
-(golden-ratio-mode 1)
+;;(golden-ratio-mode 1)
 
 (provide 'init-ui)
+;;; init-ui.el ends here

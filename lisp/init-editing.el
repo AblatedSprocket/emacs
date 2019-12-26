@@ -1,3 +1,14 @@
+;;; init-editing.el --- General editing configuration for Emacs.
+
+;;; Commentary:
+;;; - Highlights matching parentheses
+;;; - Highlights the current line
+;;; - Auto-indents when new line is added
+;;; - Enables global fly check
+;;; - Keeps track of last location of cursor in a buffer
+;;; - Saves backup files to backup directory instead of creating backups next to source files (removes default auto-save)
+;;; - Parentheses are rainbow colored
+;;; Code:
 (require 'init-elpa)
 (require 'saveplace)
 (require-package 'rainbow-delimiters)
@@ -36,3 +47,4 @@
 (add-hook 'prog-mode-hook #'rainbow-delimiters-mode)
 
 (provide 'init-editing)
+;;; init-editing.el ends here

@@ -1,3 +1,9 @@
+;;; init-elpa.el --- Creates require-package function to automate package installation
+;;; Commentary:
+;;; - Defines require-package function
+;;; - Adds melpa archive
+
+;;; Code:
 (require 'package)
 
 (defun require-package (package)
@@ -15,3 +21,4 @@
 (package-initialize)
 
 (provide 'init-elpa)
+;;; init-elpa.el ends here
