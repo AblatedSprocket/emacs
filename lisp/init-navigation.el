@@ -22,6 +22,13 @@ Repeated invocations toggle between the two most recently open buffers."
   (interactive)
   (switch-to-buffer (other-buffer (current-buffer) 1)))
 
+(defun beginning-of-line-or-indentation ()
+  "Move to beginning of line or indentation."
+  (interactive)
+  (if (bolp)
+      (back-to-indentation)
+    (beginning-of-line)))
+
 (setq recentf-save-file (concat user-emacs-directory ".recentf"))
 (recentf-mode 1)
 (setq recentf-max-menu-items 40)
@@ -30,6 +37,9 @@ Repeated invocations toggle between the two most recently open buffers."
 (setq ido-use-filename-at-point nil)
 (setq ido-auto-merge-work-directories-length -1)
 (setq ido-use-virtual-buffers t)
+
+;; Override beginning of line behavior
+(global-set-key (kbd "C-a") 'beginning-of-line-or-indentation)
 
 ;; Shows a list of buffers
 (global-set-key (kbd "C-x C-b") 'ibuffer)

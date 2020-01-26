@@ -40,6 +40,6 @@
 	     (electric-pair-mode 1)))
 
 (global-set-key (kbd "C-c C-g C-d") 'rust-debug)
-
+(global-set-key (kbd "C-c C-r") 'racer-describe)
 (provide 'init-rust)
 ;;; init-rust.el ends here
