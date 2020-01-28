@@ -7,7 +7,7 @@
 ;;; Code:
 (package-initialize)
 
-;; (package-refresh-contents)
+(package-refresh-contents)
 
 (add-to-list 'load-path (expand-file-name "lisp" user-emacs-directory))
 
@@ -23,6 +23,8 @@
 
 (require 'init-company-mode)
 
+(require 'init-code)
+
 (require 'init-rust)
 
 (provide 'init)
@@ -34,7 +36,7 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (flycheck-rust racer company projectile smex rainbow-delimiters golden-ratio flycheck atom-one-dark-theme))))
+    (ag helm-ag-r helm-swoop async helm-ag helm flycheck-rust racer company projectile smex rainbow-delimiters golden-ratio flycheck atom-one-dark-theme))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

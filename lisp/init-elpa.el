@@ -7,7 +7,7 @@
 (require 'package)
 
 (defun require-package (package)
-  "Install given package if it was not installed before."
+  "Install PACKAGE if it was not installed before."
   (if (package-installed-p package)
       t
     (progn
