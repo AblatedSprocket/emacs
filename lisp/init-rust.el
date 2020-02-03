@@ -14,7 +14,6 @@
 (require-package 'rust-mode)
 (require-package 'flycheck)
 (require-package 'flycheck-rust)
-(require-package 'cargo)
 
 (require 'company)
 (require 'racer)
@@ -23,7 +22,7 @@
 (require 'eldoc)
 (require 'flycheck)
 (require 'flycheck-rust)
-(require 'cargo)
+(require 'projectile)
 
 (add-to-list 'auto-mode-alist '("\\.rs\\'" . rust-mode))
 (add-hook 'rust-mode-hook #'company-mode)
@@ -39,7 +38,42 @@
 	     (local-set-key (kbd "TAB") #'company-indent-or-complete-common)
 	     (electric-pair-mode 1)))
 
-(global-set-key (kbd "C-c C-g C-d") 'rust-debug)
-(global-set-key (kbd "C-c C-r") 'racer-describe)
+(defun cargo-build (args)
+  "Call cargo build command with provided ARGS."
+  (interactive "sArgs:")
+  (shell-command (concat "cargo build " args)))
+
+(defun cargo-check ()
+  "Call cargo check command."
+  (interactive)
+  (shell-command "cargo check"))
+
+(defun cargo-doc (args)
+  "Call cargo doc command with provided ARGS."
+  (interactive "sArgs:")
+  (shell-command (concat "cargo doc " args)))
+
+(defun cargo-fmt ()
+  "Call cargo format command."
+  (interactive)
+  (shell-command "cargo fmt"))
+
+(defun cargo-run (args)
+  "Call cargo run command with provided ARGS."
+  (interactive "sArgs:")
+  (shell-command (concat "cargo run " args)))
+
+(defun cargo-test ()
+  "Call cargo test command."
+  (interactive)
+  (shell-command "cargo test"))
+
+(global-set-key (kbd "C-c C-e") 'racer-describe)
+(global-set-key (kbd "C-c C-r") 'cargo-run)
+(global-set-key (kbd "C-c C-b") 'cargo-build)
+(global-set-key (kbd "C-c C-t") 'cargo-test)
+(global-set-key (kbd "C-c C-f") 'cargo-fmt)
+(global-set-key (kbd "C-c C-k") 'cargo-check)
+(global-set-key (kbd "C-c C-d") 'carago-doc)
 (provide 'init-rust)
 ;;; init-rust.el ends here
