@@ -1,14 +1,41 @@
-;;; init-code.el --- Emacs configuration for any code editing in Emacs.
+;;; init-code.el --- Emacs configuration for writing code.
 ;;; Commentary:
-;;; - Enables helm-ag for refactoring code.
+;;; - Forces spaces instead of tabs
 ;;; Code:
 (require 'init-elpa)
 
-(require-package 'helm)
-(require-package 'helm-ag)
+(require-package 'rainbow-delimiters)
+(require-package 'lsp-mode)
+(require-package 'company-lsp)
 
-(require 'helm)
-(require 'helm-ag)
+(require 'company-lsp)
+(require 'init-ui)
+(require 'lsp-mode)
+
+(push 'company-lsp company-backends)
+
+(define-key lsp-mode-map (kbd "C-c C-e") 'lsp-describe-thing-at-point)
+(define-key lsp-mode-map (kbd "C-c C-a") 'lsp-find-references)
+
+(defun set-indentation ()
+  "Set indentation style."
+  (setq indent-tabs-mode nil))
+
+(defun toggle-comment-on-line ()
+  "Comment or uncomment current line."
+  (interactive)
+  (comment-or-uncomment-region (line-beginning-position) (line-end-position)))
+
+(global-set-key (kbd "C-;") 'toggle-comment-on-line)
+
+(setq company-idle-delay 0)
+(setq company-selection-wrap-around nil)
+(setq company-tooltip-align-annotations t)
+
+(add-hook 'prog-mode-hook 'rainbow-delimiters-mode)
+(add-hook 'prog-mode-hook 'set-indentation)
+(add-hook 'prog-mode-hook 'linum-mode)
+;; (add-hook 'prog-mode-hook 'smartparens-mode)
 
 (provide 'init-code)
 ;;; init-code.el ends here

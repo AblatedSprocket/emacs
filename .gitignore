@@ -10,3 +10,4 @@ backups
 elpa/
 eshell
 session.*
+.lsp-session*
