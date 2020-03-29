@@ -11,3 +11,6 @@ elpa/
 eshell
 session.*
 .lsp-session*
+*.save
+transient/
+request/

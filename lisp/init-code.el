@@ -31,11 +31,12 @@
 (setq company-idle-delay 0)
 (setq company-selection-wrap-around nil)
 (setq company-tooltip-align-annotations t)
+(setq truncate-lines nil)
 
 (add-hook 'prog-mode-hook 'rainbow-delimiters-mode)
 (add-hook 'prog-mode-hook 'set-indentation)
 (add-hook 'prog-mode-hook 'linum-mode)
-;; (add-hook 'prog-mode-hook 'smartparens-mode)
+(add-hook 'prog-mode-hook 'toggle-truncate-lines)
 
 (provide 'init-code)
 ;;; init-code.el ends here

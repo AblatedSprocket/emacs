@@ -5,7 +5,9 @@
 ;; You may delete these explanatory comments.
 
 ;;; Code:
-(package-initialize)
+
+;; Uncomment this on new installation.
+;; (package-initialize)
 
 (package-refresh-contents)
 
@@ -14,10 +16,9 @@
 (require 'init-elpa)
 (require 'init-ui)
 (require 'init-navigation)
-(require 'init-miscellaneous)
 (require 'init-writing)
 (require 'init-code)
-;; (require 'init-python)
+(require 'init-python)
 (require 'init-rust)
 
 (provide 'init)
@@ -27,7 +28,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(package-selected-packages (quote (cargo-outdated pyvenv-mode))))
+ '(package-selected-packages '(cargo-outdated pyvenv-mode)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

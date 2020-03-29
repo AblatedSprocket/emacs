@@ -4,9 +4,25 @@
 ;;; Code:
 (require 'init-elpa)
 
-(require-package 'synonymous)
+(require-package 'org)
+(require-package 'markdown-mode)
 
-(require 'synonymous)
+(require 'markdown-mode)
+(require 'org)
+
+(defun set-printing-font ()
+  "Set font to Gentium."
+  (face-remap-add-relative 'default '(:family "Gentium")))
+
+(setq truncate-lines nil)
+
+(add-hook 'text-mode-hook 'set-printing-font)
+
+(add-hook 'markdown-mode-hook 'flyspell-mode)
+
+(add-hook 'org-mode-hook 'set-printing-font)
+(add-hook 'org-mode-hook 'flyspell-mode)
+(add-hook 'org-mode-hook 'toggle-truncate-lines)
 
 (provide 'init-writing)
 ;;; init-writing.el ends here
