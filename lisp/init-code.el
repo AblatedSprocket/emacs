@@ -4,9 +4,10 @@
 ;;; Code:
 (require 'init-elpa)
 
-(require-package 'rainbow-delimiters)
-(require-package 'lsp-mode)
 (require-package 'company-lsp)
+(require-package 'lsp-mode)
+(require-package 'magit)
+(require-package 'rainbow-delimiters)
 
 (require 'company-lsp)
 (require 'init-ui)

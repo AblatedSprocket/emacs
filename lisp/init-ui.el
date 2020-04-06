@@ -30,6 +30,7 @@
 (global-set-key (kbd "M-F") 'forward-word)
 (global-set-key (kbd "M-B") 'backward-word)
 (global-set-key (kbd "M-b") 'backward-to-word)
+(global-set-key (kbd "C-c C-n") 'neotree-toggle)
 
 (fset 'yes-or-no-p 'y-or-n-p)
 
