@@ -11,10 +11,14 @@
 
 ;;; Code:
 (require 'init-elpa)
-(require 'ido)
-(require 'recentf)
+
 (require-package 'smex)
+(require-package 'neotree)
 (require-package 'projectile)
+
+(require 'ido)
+(require 'neotree)
+(require 'recentf)
 
 (defun switch-to-previous-buffer()
   "Switch to previously open buffer.
@@ -44,6 +48,7 @@ Repeated invocations toggle between the two most recently open buffers."
 ;; Shows a list of buffers
 (global-set-key (kbd "C-x C-b") 'ibuffer)
 (global-set-key (kbd "C-c b") 'switch-to-previous-buffer)
+(global-set-key (kbd "C-c C-n") 'neotree-toggle)
 
 (setq smex-save-file (concat user-emacs-directory ".smex-items"))
 (smex-initialize)
