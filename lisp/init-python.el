@@ -5,7 +5,6 @@
 (require 'init-elpa)
 (require 'init-code)
 
-(require-package 'lsp-python-ms)
 (require-package 'auto-virtualenvwrapper)
 
 (require 'auto-virtualenvwrapper)

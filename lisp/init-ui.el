@@ -26,10 +26,10 @@
 (global-set-key (kbd "C-r") 'isearch-backward-regexp)
 (global-set-key (kbd "C-M-s") 'isearch-forward)
 (global-set-key (kbd "C-M-r") 'isearch-backward)
-(global-set-key (kbd "M-f") 'forward-to-word)
-(global-set-key (kbd "M-F") 'forward-word)
-(global-set-key (kbd "M-B") 'backward-word)
-(global-set-key (kbd "M-b") 'backward-to-word)
+(global-set-key (kbd "M-F") 'forward-to-word)
+(global-set-key (kbd "M-f") 'forward-word)
+(global-set-key (kbd "M-b") 'backward-word)
+(global-set-key (kbd "M-B") 'backward-to-word)
 
 (fset 'yes-or-no-p 'y-or-n-p)
 
